@@ -1,12 +1,19 @@
 # ui-stream
 
 ## Usage
+Install [nodejs](https://nodejs.org/) or [iojs](https://iojs.org/en/index.html), clone this repo
+and do:
+
 ```
 npm install
 npm start
 ```
 
+Then open `http://localhost:3000` or `http://your-ip:3000` in a modern web browser.
+
 ## Testing
+
+Runs with static test image.
 
 ```
 npm test
@@ -14,7 +21,7 @@ npm test
 
 ## Results
 
-FullHD JPEG: ~30fps
+FullHD JPEG: ~45fps
 
 ## Protokol
 
