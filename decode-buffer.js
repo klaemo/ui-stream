@@ -27,7 +27,7 @@ Decoder.prototype.decode = function(buf) {
 }
 
 Decoder.prototype._handleImagePacket = function(data) {
-  // var lastImageSeqNum = this.mImageSeqNum
+  var lastImageSeqNum = this.mImageSeqNum
   this.mImageSeqNum = ntohl(data, 4)
 
   var frameSize = ntohl(data, 8)
@@ -46,11 +46,11 @@ Decoder.prototype._handleImagePacket = function(data) {
     this.mJPEGData = []
   }
 
-  // if (this.mLastPacketNum === packetCount - 1 || lastImageSeqNum === this.mImageSeqNum) {
-  this.mJPEGData.push(data.slice(20))
-  this.mLastPacketNum++
-  this.bytesWritten += packetLen
-  // }
+  if (this.mLastPacketNum === packetCount - 1 || lastImageSeqNum === this.mImageSeqNum) {
+    this.mJPEGData.push(data.slice(20))
+    this.mLastPacketNum++
+    this.bytesWritten += packetLen
+  }
 
   // image complete
   if (this.bytesWritten === frameSize) {
