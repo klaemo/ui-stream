@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.status-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.status-bar {
+  padding: 1em;
+}
+
+.canvas {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+button {
+  margin-right: 1em;
+}

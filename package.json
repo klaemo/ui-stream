@@ -4,7 +4,10 @@
   "description": "UI Streaming",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "watchify client.js -dv -o client/bundle.js",
+    "build": "browserify client.js -o client/bundle.js",
+    "start": "npm run -s watch & node server.js",
+    "test": "NODE_ENV=test npm start"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,18 @@
   "bugs": {
     "url": "https://github.com/klaemo/ui-stream/issues"
   },
-  "homepage": "https://github.com/klaemo/ui-stream"
+  "homepage": "https://github.com/klaemo/ui-stream",
+  "dependencies": {
+    "binary-pack": "^1.0.1",
+    "express": "^4.12.3",
+    "network-byte-order": "^0.2.0",
+    "node-osc": "^0.3.0",
+    "transform-style": "^0.1.0",
+    "ua-parser-js": "^0.7.6",
+    "ws": "^0.7.1"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "watchify": "^3.1.2"
+  }
 }

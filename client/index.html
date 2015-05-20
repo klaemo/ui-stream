@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UI Stream</title>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div role="main" class="main">
+    <canvas data-hook="canvas" width="1920" height="1080" class="canvas"></canvas>
+
+    <div class="status-bar">
+      <button data-hook="toggle-running">Stop</button>
+      <p><span>FPS: </span><span data-hook="fps"></span></p>
+      <p><span>Image Decoding: </span><span data-hook="timing"></span></p>
+      <p><span>Receive: </span><span data-hook="receive"></span></p>
+    </div>
+  </div>
+
+  <!-- <script src="/primus/primus.js"></script> -->
+  <script src="/bundle.js"></script>
+</body>
+</html>
